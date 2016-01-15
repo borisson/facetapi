@@ -187,7 +187,7 @@ class IntegrationTest extends FacetWebTestBase {
     $this->assertLink('article');
 
     $this->clickLink('item');
-    $this->assertUrl('search-api-test-fulltext?f[0]=test:item');
+    $this->assertUrl('search-api-test-fulltext', ['query' => ['f[0]' => 'test:item']]);
 
     $this->drupalGet($facet_edit_page);
     $this->drupalPostForm(NULL, ['url_alias' => 'llama'], $this->t('Save'));
